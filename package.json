@@ -1,0 +1,16 @@
+{
+  "name": "chatgood",
+  "version": "1.0.0",
+  "description": "Minimal text-only web chat for users on different networks.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}

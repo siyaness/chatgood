@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGood</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel" id="join-panel">
+        <h1>ChatGood</h1>
+        <p class="subtext">텍스트만 주고받는 아주 간단한 채팅</p>
+        <form id="join-form" class="stack">
+          <label class="field">
+            <span>닉네임</span>
+            <input id="nickname" name="nickname" maxlength="20" required />
+          </label>
+          <label class="field">
+            <span>방 이름</span>
+            <input id="room" name="room" maxlength="30" required />
+          </label>
+          <button type="submit">입장하기</button>
+        </form>
+        <p class="status" id="join-status"></p>
+      </section>
+
+      <section class="panel hidden" id="chat-panel">
+        <header class="chat-header">
+          <div>
+            <strong id="room-label"></strong>
+            <p class="subtext" id="room-meta"></p>
+          </div>
+          <button type="button" id="leave-button" class="ghost">나가기</button>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite"></section>
+
+        <form id="message-form" class="message-form">
+          <input
+            id="message-input"
+            name="message"
+            maxlength="500"
+            placeholder="메시지를 입력하세요"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">전송</button>
+        </form>
+        <p class="status" id="message-status"></p>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
